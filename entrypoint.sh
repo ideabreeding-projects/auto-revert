@@ -17,4 +17,6 @@ git config --global user.name "hyseo492"
 
 git revert HEAD
 
-git push https://$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
+git remote set-url --push origin https://hyseo492:$GITHUB_TOKEN.com/$REPO_FULLNAME
+
+git push
