@@ -9,4 +9,6 @@ fi
 
 REPO_FULLNAME=$(jq -r ".repository.full_name" "$GITHUB_EVENT_PATH")
 
+git config --global --add safe.directory /temp
+
 git revert HEAD
