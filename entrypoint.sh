@@ -11,4 +11,8 @@ REPO_FULLNAME=$(jq -r ".repository.full_name" "$GITHUB_EVENT_PATH")
 
 git config --global --add safe.directory /github/workspace
 
+git config --global user.email "hyseo@ymtech.co.kr"
+
+git config --global user.name "hyseo492"
+
 git revert HEAD
