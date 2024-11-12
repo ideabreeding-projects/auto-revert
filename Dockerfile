@@ -9,4 +9,5 @@ LABEL "com.github.actions.color"="red"
 RUN apk --no-cache add jq bash curl git
 
 ADD entrypoint.sh /entrypoint.sh
+RUN ["chmod", "+x", "/entrypoint.sh"]
 ENTRYPOINT ["/entrypoint.sh"]
