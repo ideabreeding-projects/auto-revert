@@ -15,6 +15,6 @@ git config --global user.email "hyseo@ymtech.co.kr"
 
 git config --global user.name "hyseo492"
 
-git revert HEAD
+git reset HEAD^
 
 git push
