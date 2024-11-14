@@ -17,6 +17,8 @@ commit_resp=$(curl -X GET -s -H "${AUTH_HEADER}" -H "${API_HEADER}" "${URI}/repo
 
 PARENT_SHA=$(echo "$commit_resp" | jq "-r .sha")
 
+echo "PARENT_SHA=${PARENT_SHA}"
+
 git config --global --add safe.directory /github/workspace
 
 git config --global user.email "hyseo@ymtech.co.kr"
