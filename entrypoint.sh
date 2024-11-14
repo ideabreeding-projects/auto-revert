@@ -15,6 +15,8 @@ AUTH_HEADER="Authorization: token $GITHUB_TOKEN"
 
 commit_resp=$(curl -X GET -s -H "${AUTH_HEADER}" -H "${API_HEADER}" "${URI}/repos/$REPO_PULLNAME/commits/main")
 
+echo "COMMIT_RESP=${commit_resp}"
+
 PARENT_SHA=$(echo "$commit_resp" | jq -r .sha)
 
 echo "PARENT_SHA=${PARENT_SHA}"
