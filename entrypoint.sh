@@ -19,13 +19,13 @@ CURRENT_SHA=$(echo "$commit_resp" | jq -r .sha)
 
 PARENT_SHA=$(echo "$commit_resp" | jq -r .parents.[0].sha)
 
-echo "CURRENT_SHA=$CURRNET_SHA"
+echo "CURRENT_SHA=$CURRENT_SHA"
 
 echo "CURRENT_SHA_LENGTH=${#CURRENT_SHA}"
 
 echo "PARENT_SHA=$PARENT_SHA"
 
-echo "CURRENT_SHA_LENGTH=${#PARENT_SHA}"
+echo "PARENT_SHA_LENGTH=${#PARENT_SHA}"
 
 git config --global --add safe.directory /github/workspace
 
@@ -33,7 +33,7 @@ git config --global user.email "hyseo@ymtech.co.kr"
 
 git config --global user.name "hyseo492"
 
-git reset "${PARENT_SHA}"
+git reset "${CURRENT_SHA}"
 
 git commit -m 'rollback commit'
 
