@@ -27,16 +27,20 @@ echo "PARENT_SHA=$PARENT_SHA"
 
 echo "PARENT_SHA_LENGTH=${#PARENT_SHA}"
 
-echo $(git --version)
-
+echo "git config --global --add safe.directory /github/workspace"
 git config --global --add safe.directory /github/workspace
 
+echo "config --global user.email hyseo@ymtech.co.kr"
 git config --global user.email "hyseo@ymtech.co.kr"
 
+echo "git config --global user.name hyseo492"
 git config --global user.name "hyseo492"
 
-git revert --no-edit HEAD
+echo "git reset --hard $PARENT_SHA"
+git reset --hard $PARENT_SHA
 
+echo "git commit"
 git commit -m 'rollback commit'
 
+echo "git push -f origin main"
 git push -f origin main
