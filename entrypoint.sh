@@ -25,8 +25,8 @@ git config --global user.email "hyseo@ymtech.co.kr"
 
 git config --global user.name "hyseo492"
 
-git reset --hard 'HEAD^'
+git reset $CURRENT_SHA
 
 git commit -m 'rollback commit'
 
-git push origin main -f
+git push -f origin main
