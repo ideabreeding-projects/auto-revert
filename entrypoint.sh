@@ -23,6 +23,6 @@ git config --global user.email "hyseo@ymtech.co.kr"
 
 git config --global user.name "hyseo492"
 
-git revert $PARENT_SHA
+git revert --no-edit ${PARENT_SHA}
 
 git push origin main -f
