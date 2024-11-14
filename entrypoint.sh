@@ -19,15 +19,13 @@ PARENT_SHA=$(echo "$commit_resp" | jq -r .parents.[0].sha)
 
 echo "PARENT_SHA=$PARENT_SHA"
 
-echo $(type($PARENT_SHA))
-
 git config --global --add safe.directory /github/workspace
 
 git config --global user.email "hyseo@ymtech.co.kr"
 
 git config --global user.name "hyseo492"
 
-git reset ${PARENT_SHA}
+git reset "${PARENT_SHA}"
 
 git commit -m 'rollback commit'
 
