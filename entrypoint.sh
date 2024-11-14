@@ -35,7 +35,7 @@ git config --global user.email "hyseo@ymtech.co.kr"
 
 git config --global user.name "hyseo492"
 
-git reset 75839247426951bb3f1062036ce654e624d9b91b
+git reset HEAD
 
 git commit -m 'rollback commit'
 
