@@ -37,7 +37,7 @@ echo "git config --global user.name hyseo492"
 git config --global user.name "hyseo492"
 
 echo "git reset --hard $PARENT_SHA"
-git reset --hard $PARENT_SHA
+git reset --hard "$PARENT_SHA"
 
 echo "git commit"
 git commit -m 'rollback commit'
