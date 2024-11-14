@@ -33,7 +33,7 @@ git config --global user.email "hyseo@ymtech.co.kr"
 
 git config --global user.name "hyseo492"
 
-git reset "${PARENT_SHA}"
+git reset 75839247426951bb3f1062036ce654e624d9b91b
 
 git commit -m 'rollback commit'
 
