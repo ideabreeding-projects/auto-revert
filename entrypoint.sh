@@ -27,6 +27,8 @@ echo "PARENT_SHA=$PARENT_SHA"
 
 echo "PARENT_SHA_LENGTH=${#PARENT_SHA}"
 
+echo $(git --version)
+
 git config --global --add safe.directory /github/workspace
 
 git config --global user.email "hyseo@ymtech.co.kr"
