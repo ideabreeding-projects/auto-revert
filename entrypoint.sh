@@ -15,9 +15,17 @@ AUTH_HEADER="Authorization: Bearer $GITHUB_TOKEN"
 
 commit_resp=$(curl -s -H "$AUTH_HEADER" -H "$API_HEADER" "$URI/repos/$REPO_FULLNAME/commits/main")
 
+CURRENT_SHA=$(echo "$commit_resp" | jq -r .sha)
+
 PARENT_SHA=$(echo "$commit_resp" | jq -r .parents.[0].sha)
 
+echo "CURRENT_SHA=$CURRNET_SHA"
+
+echo "CURRENT_SHA_LENGTH=${#CURRENT_SHA}"
+
 echo "PARENT_SHA=$PARENT_SHA"
+
+echo "CURRENT_SHA_LENGTH=${#PARENT_SHA}"
 
 git config --global --add safe.directory /github/workspace
 
