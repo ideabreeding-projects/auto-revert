@@ -17,7 +17,7 @@ commit_resp=$(curl -s -H "$AUTH_HEADER" -H "$API_HEADER" "$URI/repos/$REPO_FULLN
 
 PARENT_SHA=$(echo "$commit_resp" | jq -r .parents.[].sha)
 
-echo "PARENT_SHA=$PARENT_SHA"
+echo "PARENT_SHA=$PARENT_SHA[0]"
 
 git config --global --add safe.directory /github/workspace
 
@@ -25,7 +25,7 @@ git config --global user.email "hyseo@ymtech.co.kr"
 
 git config --global user.name "hyseo492"
 
-git reset $PARENT_SHA
+git reset $PARENT_SHA[0]
 
 git commit -m 'rollback commit'
 
