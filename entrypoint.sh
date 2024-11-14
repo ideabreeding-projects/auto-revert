@@ -15,9 +15,9 @@ AUTH_HEADER="Authorization: Bearer $GITHUB_TOKEN"
 
 commit_resp=$(curl -s -H "$AUTH_HEADER" -H "$API_HEADER" "$URI/repos/$REPO_FULLNAME/commits/main")
 
-CURRENT_SHA=$(echo "$commit_resp" | jq -r .sha)
+PARENT_SHA=$(echo "$commit_resp" | jq -r .parents.[].sha)
 
-echo "CURRENT_SHA=$CURRENT_SHA"
+echo "PARENT_SHA=$PARENT_SHA"
 
 git config --global --add safe.directory /github/workspace
 
@@ -25,7 +25,7 @@ git config --global user.email "hyseo@ymtech.co.kr"
 
 git config --global user.name "hyseo492"
 
-git reset $CURRENT_SHA
+git reset $PARENT_SHA
 
 git commit -m 'rollback commit'
 
