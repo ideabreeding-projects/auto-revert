@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
 LABEL repository="https://github.com/ideabreeding-projects/auto-revert"
 LABEL homepage="https://github.com/ideabreeding-projects/auto-revert"
