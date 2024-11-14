@@ -15,7 +15,7 @@ AUTH_HEADER="Authorization: Bearer $GITHUB_TOKEN"
 
 echo "AUTH_HEADER=${AUTH_HEADER}"
 
-commit_resp=$(curl -H "${AUTH_HEADER}" -H "$API_HEADER" "${URI}/repos/$REPO_PULLNAME/commits/main")
+commit_resp=$(curl -s -H "${AUTH_HEADER}" -H "$API_HEADER" "${URI}/repos/$REPO_PULLNAME/commits/main")
 
 echo "COMMIT_RESP=${commit_resp}"
 
