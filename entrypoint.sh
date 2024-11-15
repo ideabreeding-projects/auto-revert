@@ -39,8 +39,5 @@ git config --global user.name "hyseo492"
 echo "git reset --hard $PARENT_SHA"
 git reset --hard "$PARENT_SHA"
 
-echo "git commit"
-git commit -m 'rollback commit'
-
 echo "git push -f origin main"
 git push -f origin main
