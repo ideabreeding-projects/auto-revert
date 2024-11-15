@@ -36,11 +36,14 @@ git config --global user.email "hyseo@ymtech.co.kr"
 echo "git config --global user.name hyseo492"
 git config --global user.name "hyseo492"
 
-echo "git log"
+echo "before fetch git log"
 echo $(git log)
 
-echo "git fsck"
-echo $(git fsck)
+echo "git fetch"
+git fetch origin main
+
+echo "after fetch git log"
+echo $(git log)
 
 echo "git reset --hard $PARENT_SHA"
 git reset --hard "$PARENT_SHA"
