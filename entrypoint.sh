@@ -19,34 +19,14 @@ CURRENT_SHA=$(echo "$commit_resp" | jq -r .sha)
 
 PARENT_SHA=$(echo "$commit_resp" | jq -r .parents.[0].sha)
 
-echo "CURRENT_SHA=$CURRENT_SHA"
-
-echo "CURRENT_SHA_LENGTH=${#CURRENT_SHA}"
-
-echo "PARENT_SHA=$PARENT_SHA"
-
-echo "PARENT_SHA_LENGTH=${#PARENT_SHA}"
-
-echo "git config --global --add safe.directory /github/workspace"
 git config --global --add safe.directory /github/workspace
 
-echo "config --global user.email hyseo@ymtech.co.kr"
 git config --global user.email "hyseo@ymtech.co.kr"
 
-echo "git config --global user.name hyseo492"
 git config --global user.name "hyseo492"
 
-echo "before fetch git log"
-echo $(git log)
+git fetch --depth 5
 
-echo "git fetch --unshallow"
-git fetch --unshallow
-
-echo "after fetch git log"
-echo $(git log)
-
-echo "git reset --hard $PARENT_SHA"
 git reset --hard "$PARENT_SHA"
 
-echo "git push -f origin main"
 git push -f origin main
