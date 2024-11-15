@@ -36,6 +36,12 @@ git config --global user.email "hyseo@ymtech.co.kr"
 echo "git config --global user.name hyseo492"
 git config --global user.name "hyseo492"
 
+echo "git log"
+echo $(git log)
+
+echo "git fsck"
+echo $(git fsck)
+
 echo "git reset --hard $PARENT_SHA"
 git reset --hard "$PARENT_SHA"
 
